@@ -9,6 +9,8 @@
       <change afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/comment/entity/Comment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/comment/repository/.gitkeep" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/comment/service/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/post/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/post/entity/Post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +69,7 @@
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feat/comment-entity-설계&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/post-entity-설계&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/buhyeonsu/Desktop/GE-BE/GE/src/main/java/org/example/ge/post/repository&quot;,
@@ -129,6 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726797525483</updated>
       <workItem from="1726797526865" duration="761000" />
+      <workItem from="1726797526865" duration="434000" />
     </task>
     <servers />
   </component>
