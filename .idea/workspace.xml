@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ba8197-f7ea-4d86-8c45-a037a10132d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/comment/controller/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/comment/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/comment/repository/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/comment/service/.gitkeep" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/post/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/GE/src/main/java/org/example/ge/post/entity/Post.java" afterDir="false" />
     </list>
@@ -64,6 +68,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/comment-entity-설계&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feat/post-entity-설계&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -126,6 +131,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726797525483</updated>
+      <workItem from="1726797526865" duration="761000" />
       <workItem from="1726797526865" duration="434000" />
     </task>
     <servers />
