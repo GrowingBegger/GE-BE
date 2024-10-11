@@ -1,4 +1,4 @@
-package org.example.ge.domain.post.mapepr;
+package org.example.ge.domain.post.mapper;
 
 
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;

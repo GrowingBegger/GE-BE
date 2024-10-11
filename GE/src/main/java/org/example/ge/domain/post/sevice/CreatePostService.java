@@ -2,8 +2,8 @@ package org.example.ge.domain.post.sevice;
 
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
-import org.example.ge.domain.post.mapepr.CreatePostParams;
-import org.example.ge.domain.post.mapepr.CreatePostRequestMapper;
+import org.example.ge.domain.post.mapper.CreatePostParams;
+import org.example.ge.domain.post.mapper.CreatePostRequestMapper;
 import org.example.ge.domain.post.repository.PostRepository;
 import org.example.ge.instrastructure.common.file.FileUploader;
 import org.springframework.stereotype.Service;
