@@ -3,16 +3,19 @@ package org.example.ge.domain.post.sevice;
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
 import org.example.ge.domain.post.repository.PostRepository;
+import org.example.ge.instrastructure.common.file.FileUploader;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @Service
 public class CretePostService {
     private final PostRepository postRepository;
 
-    public void execute(CreatePostRequest request, Long userId) {
-        // TODO :: 이미지 S3 업로드 로직 작성
-        String imageUrl = "";
+    private final FileUploader fileUploader;
+
+    public void execute(CreatePostRequest request, Long userId, MultipartFile image) {
+        String imageUrl = fileUploader.upload(image);
         postRepository.save(request.toEntity(userId, imageUrl));
     }
 }
