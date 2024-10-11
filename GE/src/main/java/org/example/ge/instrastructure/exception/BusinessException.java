@@ -1,6 +1,4 @@
-package org.example.ge.global.exception;
-
-import lombok.AllArgsConstructor;
+package org.example.ge.instrastructure.exception;
 
 public class BusinessException extends RuntimeException {
     public final ErrorCode errorCode;

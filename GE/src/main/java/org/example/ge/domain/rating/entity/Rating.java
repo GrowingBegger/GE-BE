@@ -1,4 +1,4 @@
-package org.example.ge.rating.entity;
+package org.example.ge.domain.rating.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;

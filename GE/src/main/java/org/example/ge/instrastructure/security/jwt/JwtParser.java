@@ -1,10 +1,10 @@
-package org.example.ge.global.security.jwt;
+package org.example.ge.instrastructure.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.example.ge.global.security.auth.CustomUserDetailService;
+import org.example.ge.instrastructure.security.auth.CustomUserDetailService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

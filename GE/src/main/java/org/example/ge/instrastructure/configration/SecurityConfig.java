@@ -1,8 +1,8 @@
-package org.example.ge.global.configration;
+package org.example.ge.instrastructure.configration;
 
 import lombok.RequiredArgsConstructor;
-import org.example.ge.global.filter.JwtFilter;
-import org.example.ge.global.security.jwt.JwtParser;
+import org.example.ge.instrastructure.filter.JwtFilter;
+import org.example.ge.instrastructure.security.jwt.JwtParser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

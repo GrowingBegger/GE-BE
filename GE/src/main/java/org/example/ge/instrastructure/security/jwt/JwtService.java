@@ -1,4 +1,4 @@
-package org.example.ge.global.security.jwt;
+package org.example.ge.instrastructure.security.jwt;
 
 public class JwtService {
 }

@@ -1,4 +1,4 @@
-package org.example.ge.post.entity;
+package org.example.ge.domain.post.entity;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;

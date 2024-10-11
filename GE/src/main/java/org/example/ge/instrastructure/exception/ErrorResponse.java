@@ -1,4 +1,4 @@
-package org.example.ge.global.exception;
+package org.example.ge.instrastructure.exception;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package org.example.ge.global.exception;
+package org.example.ge.instrastructure.exception;
 
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;

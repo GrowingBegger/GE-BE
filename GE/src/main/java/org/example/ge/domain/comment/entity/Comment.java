@@ -1,4 +1,4 @@
-package org.example.ge.comment.entity;
+package org.example.ge.domain.comment.entity;
 
 import jakarta.persistence.*;
 

@@ -1,11 +1,11 @@
-package org.example.ge.global.filter;
+package org.example.ge.instrastructure.filter;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.example.ge.global.security.jwt.JwtParser;
+import org.example.ge.instrastructure.security.jwt.JwtParser;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;

@@ -1,4 +1,4 @@
-package org.example.ge.global.security.auth;
+package org.example.ge.instrastructure.security.auth;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
