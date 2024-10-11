@@ -1,9 +1,11 @@
 package org.example.ge.domain.user.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import org.hibernate.annotations.ColumnDefault;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
+@Getter
 @Entity
 public class User {
 
@@ -11,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String username;
 
     @Column(nullable = false)

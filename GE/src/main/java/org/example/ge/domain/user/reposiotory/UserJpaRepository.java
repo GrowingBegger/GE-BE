@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface UserJpaRepository extends CrudRepository<User, Long> {
 
-    Optional<User> getUserByUserId (Long userId);
+    Optional<User> getUserByUsername (String username);
 }
