@@ -1,5 +1,6 @@
 package org.example.ge.domain.post.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
 import org.example.ge.domain.post.mapper.CreatePostParams;
@@ -18,6 +19,7 @@ public class CreatePostService {
 
     private final CreatePostRequestMapper mapper;
 
+    @Transactional
     public void execute(CreatePostRequest request, Long userId, MultipartFile image) {
         String imageUrl = fileUploader.upload(image);
         postRepository.save(mapper.toEntity(request, new CreatePostParams(userId, imageUrl)));
