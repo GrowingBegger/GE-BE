@@ -26,4 +26,7 @@ public class Post {
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "price", nullable = false, updatable = false)
+    private Double price;
 }
