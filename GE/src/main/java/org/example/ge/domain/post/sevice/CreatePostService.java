@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @Service
-public class CretePostService {
+public class CreatePostService {
     private final PostRepository postRepository;
 
     private final FileUploader fileUploader;
