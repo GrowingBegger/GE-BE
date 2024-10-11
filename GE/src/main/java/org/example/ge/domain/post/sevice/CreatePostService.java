@@ -2,6 +2,8 @@ package org.example.ge.domain.post.sevice;
 
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
+import org.example.ge.domain.post.mapepr.CreatePostParams;
+import org.example.ge.domain.post.mapepr.CreatePostRequestMapper;
 import org.example.ge.domain.post.repository.PostRepository;
 import org.example.ge.instrastructure.common.file.FileUploader;
 import org.springframework.stereotype.Service;
@@ -14,8 +16,10 @@ public class CreatePostService {
 
     private final FileUploader fileUploader;
 
+    private final CreatePostRequestMapper mapper;
+
     public void execute(CreatePostRequest request, Long userId, MultipartFile image) {
         String imageUrl = fileUploader.upload(image);
-        postRepository.save(request.toEntity(userId, imageUrl));
+        postRepository.save(mapper.toEntity(request, new CreatePostParams(userId, imageUrl)));
     }
 }
