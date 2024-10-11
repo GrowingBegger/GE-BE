@@ -1,9 +1,9 @@
 package org.example.ge.domain.user.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.ge.domain.user.dto.request.LoginRequestDto;
-import org.example.ge.domain.user.dto.response.LoginResponseDto;
-import org.example.ge.domain.user.useCase.LoginUseCase;
+import org.example.ge.domain.user.dto.request.LoginRequest;
+import org.example.ge.domain.user.dto.response.LoginResponse;
+import org.example.ge.domain.user.service.LoginService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
-    private final LoginUseCase loginUseCase;
+    private final LoginService loginService;
 
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
-    public LoginResponseDto login(LoginRequestDto requestDto) {
-        return loginUseCase.execute(requestDto);
+    public LoginResponse login(LoginRequest requestDto) {
+        return loginService.execute(requestDto);
     }
 }

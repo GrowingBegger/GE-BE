@@ -1,6 +1,6 @@
 package org.example.ge.domain.user.dto.response;
 
-public record LoginResponseDto (
+public record LoginResponse(
         String accessToken
 ) {
 }
