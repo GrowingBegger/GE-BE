@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -34,5 +35,5 @@ public class Post {
     private LocalDateTime createdAt;
 
     @Column(name = "price", nullable = false, updatable = false)
-    private Double price;
+    private BigDecimal price;
 }
