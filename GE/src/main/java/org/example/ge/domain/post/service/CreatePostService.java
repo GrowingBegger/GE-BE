@@ -1,4 +1,4 @@
-package org.example.ge.domain.post.sevice;
+package org.example.ge.domain.post.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
