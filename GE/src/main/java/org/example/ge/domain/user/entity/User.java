@@ -24,7 +24,7 @@ public class User {
 
     @Column(nullable = false)
     @ColumnDefault(value = "1")
-    private int rank;
+    private int userRank;
 
     @Column(nullable = false)
     @ColumnDefault(value = "0")
@@ -35,6 +35,6 @@ public class User {
     private Long target;
 
     @Column(nullable = false)
-    @ColumnDefault(value = "Default_img_url") // todo: 기본 이미지 확정되면 여기에 링크 넣기
+    @ColumnDefault(value = "'Default_img_url'") // todo: 기본 이미지 확정되면 여기에 링크 넣기
     private String profile;
 }
