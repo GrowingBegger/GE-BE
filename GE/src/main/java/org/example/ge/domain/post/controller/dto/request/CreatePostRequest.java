@@ -7,4 +7,5 @@ public record CreatePostRequest(
         String content,
         BigDecimal price
 ) {
+
 }

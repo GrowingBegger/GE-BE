@@ -1,7 +1,10 @@
 package org.example.ge.instrastructure.common.user;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class CurrentUserProviderImpl implements CurrentUserProvider {
 
     @Override
