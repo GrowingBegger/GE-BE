@@ -13,13 +13,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(20)")
     private String username;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(20)")
     private String nickname;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(225)")
     private String password;
 
     @Column(nullable = false)
@@ -33,4 +33,8 @@ public class User {
     @Column(nullable = false)
     @ColumnDefault(value = "0")
     private Long target;
+
+    @Column(nullable = false)
+    @ColumnDefault(value = "Default_img_url") // todo: 기본 이미지 확정되면 여기에 링크 넣기
+    private String profile;
 }
