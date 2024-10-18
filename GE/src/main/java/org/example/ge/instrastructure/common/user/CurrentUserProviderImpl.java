@@ -1,5 +1,7 @@
 package org.example.ge.instrastructure.common.user;
 
+import org.example.ge.instrastructure.security.auth.CustomUserDetail;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -9,12 +11,12 @@ public class CurrentUserProviderImpl implements CurrentUserProvider {
 
     @Override
     public Long getCurrentUserId() {
-        return null;
+        return ((CustomUserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).userId();
     }
 
     @Override
     public String getCurrentUserName() {
-        return null;
+        return ((CustomUserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
     }
 
     @Override
@@ -24,6 +26,6 @@ public class CurrentUserProviderImpl implements CurrentUserProvider {
 
     @Override
     public boolean isAuthenticated() {
-        return false;
+        return SecurityContextHolder.getContext().getAuthentication() != null;
     }
 }
