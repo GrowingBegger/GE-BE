@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface UserJpaRepository extends CrudRepository<User, Long> {
 
     Optional<User> getUserByUsername (String username);
+
+    Optional<User> getUserByUserId (Long id);
 }

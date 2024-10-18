@@ -29,7 +29,8 @@ public class JwtParser {
 
     public Authentication getAuthentication (String token) {
         Claims claims = getClaims(token);
-        UserDetails userDetails = customUserDetailService.loadUserByUsername(claims.getSubject());
+
+        UserDetails userDetails = customUserDetailService.loadUserByUserId(Long.parseLong(claims.getSubject()));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
