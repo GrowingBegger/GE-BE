@@ -21,7 +21,7 @@ public class JwtParser {
         String token = req.getHeader(jwtProperties.header());
 
         if (StringUtils.hasText(token) && token.startsWith(jwtProperties.prefix()) && token.length() > 7) {
-            token = token.split(" ")[0];
+            token = token.split(" ")[1];
         }
 
         return token;
