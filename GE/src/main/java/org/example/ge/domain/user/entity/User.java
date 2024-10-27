@@ -7,6 +7,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Getter
+@Setter
 @Entity
 @Builder
 @DynamicInsert

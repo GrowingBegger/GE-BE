@@ -2,16 +2,14 @@ package org.example.ge.domain.user.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.user.dto.request.EditProfileImgRequest;
+import org.example.ge.domain.user.dto.request.EditProfileInfoRequest;
 import org.example.ge.domain.user.dto.request.LoginRequest;
 import org.example.ge.domain.user.dto.request.SignupRequest;
-import org.example.ge.domain.user.dto.response.EditProfileImgResponse;
 import org.example.ge.domain.user.dto.response.GetProfileResponse;
 import org.example.ge.domain.user.dto.response.LoginResponse;
-import org.example.ge.domain.user.service.EditProfileImgService;
-import org.example.ge.domain.user.service.GetUserProfileService;
-import org.example.ge.domain.user.service.LoginService;
-import org.example.ge.domain.user.service.SignupService;
+import org.example.ge.domain.user.service.*;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,6 +20,7 @@ public class UserController {
     private final SignupService signupService;
     private final GetUserProfileService getProfileService;
     private final EditProfileImgService editProfileImgService;
+    private final EditProfileInfoService editProfileInfoService;
 
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
@@ -43,7 +42,13 @@ public class UserController {
 
     @PatchMapping("/img")
     @ResponseStatus(HttpStatus.OK)
-    public EditProfileImgResponse editProfileImg(@ModelAttribute EditProfileImgRequest editProfileImgRequest) {
-        return editProfileImgService.execute(editProfileImgRequest);
+    public void editProfileImg(@ModelAttribute EditProfileImgRequest editProfileImgRequest) {
+        editProfileImgService.execute(editProfileImgRequest);
+    }
+
+    @PatchMapping("/info")
+    @ResponseStatus(HttpStatus.OK)
+    public void editProfileInfo(@RequestBody EditProfileInfoRequest editProfileInfoRequest) {
+        editProfileInfoService.execute(editProfileInfoRequest);
     }
 }
