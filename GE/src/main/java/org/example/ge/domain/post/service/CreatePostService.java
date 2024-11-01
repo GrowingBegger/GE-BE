@@ -20,8 +20,7 @@ public class CreatePostService {
     private final CreatePostRequestMapper mapper;
 
     @Transactional
-    public void execute(CreatePostRequest request, Long userId, MultipartFile image) {
-        String imageUrl = fileUploader.upload(image);
-        postRepository.save(mapper.toEntity(request, new CreatePostParams(userId, imageUrl)));
+    public void execute(CreatePostRequest request, Long userId) {
+        postRepository.save(mapper.toEntity(request, new CreatePostParams(userId)));
     }
 }

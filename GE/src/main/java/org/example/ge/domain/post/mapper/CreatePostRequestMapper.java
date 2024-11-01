@@ -15,7 +15,6 @@ public class CreatePostRequestMapper implements Mapper<CreatePostRequest, Post, 
                 .content(request.content())
                 .price(request.price())
                 .userId(params.userId())
-                .imageUrl(params.imageUrl())
                 .build();
     }
 
