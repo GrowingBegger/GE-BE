@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
 import org.example.ge.domain.post.controller.dto.request.UpdatePostRequest;
+import org.example.ge.domain.post.controller.dto.response.CreatePostResponse;
 import org.example.ge.domain.post.controller.dto.response.GetPostResponse;
 import org.example.ge.domain.post.service.*;
 import org.example.ge.instrastructure.common.user.CurrentUserProvider;
@@ -29,9 +30,9 @@ public class PostController {
     private final AttachPostImageService attachPostImageService;
 
     @PostMapping
-    public void createPost(@RequestBody CreatePostRequest request) {
+    public CreatePostResponse createPost(@RequestBody CreatePostRequest request) {
         Long userId = currentUserProvider.getCurrentUserId();
-        createPostService.execute(request, userId);
+        return createPostService.execute(request, userId);
     }
 
     @GetMapping

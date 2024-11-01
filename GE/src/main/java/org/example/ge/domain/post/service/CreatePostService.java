@@ -3,6 +3,8 @@ package org.example.ge.domain.post.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
+import org.example.ge.domain.post.controller.dto.response.CreatePostResponse;
+import org.example.ge.domain.post.entity.Post;
 import org.example.ge.domain.post.mapper.CreatePostParams;
 import org.example.ge.domain.post.mapper.CreatePostRequestMapper;
 import org.example.ge.domain.post.repository.PostRepository;
@@ -20,7 +22,8 @@ public class CreatePostService {
     private final CreatePostRequestMapper mapper;
 
     @Transactional
-    public void execute(CreatePostRequest request, Long userId) {
-        postRepository.save(mapper.toEntity(request, new CreatePostParams(userId)));
+    public CreatePostResponse execute(CreatePostRequest request, Long userId) {
+        Post post = postRepository.save(mapper.toEntity(request, new CreatePostParams(userId)));
+        return new CreatePostResponse(post.getId());
     }
 }
