@@ -18,4 +18,9 @@ public class CreatePostRequestMapper implements Mapper<CreatePostRequest, Post, 
                 .imageUrl(params.imageUrl())
                 .build();
     }
+
+    @Override
+    public CreatePostRequest toDto(Post entity, CreatePostParams params) {
+        return null;
+    }
 }
