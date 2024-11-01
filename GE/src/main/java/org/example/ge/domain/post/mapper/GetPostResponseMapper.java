@@ -23,6 +23,8 @@ public class GetPostResponseMapper implements Mapper<GetPostResponse, Post, User
                 .price(entity.getPrice())
                 .imageUrl(entity.getImageUrl())
                 .writerImageUrl(params.getProfile())
+                .writerName(params.getNickname())
+                .createdAt(entity.getCreatedAt())
                 .build();
     }
 }
