@@ -50,7 +50,6 @@ public class PostController {
         updatePostService.updatePost(id, userId, request);
     }
 
-    // 파일 업로드를 위한 메소드 추가
     @PostMapping("/{id}/image")
     public void attachImage(@PathVariable Long id, @RequestPart(value = "image", required = true) MultipartFile image) {
         Long userId = currentUserProvider.getCurrentUserId();
