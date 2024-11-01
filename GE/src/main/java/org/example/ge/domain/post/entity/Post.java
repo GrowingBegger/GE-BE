@@ -31,7 +31,7 @@ public class Post {
     @Column(name = "content", columnDefinition = "TEXT", nullable = false, updatable = false)
     private String content;
 
-    @Column(name = "image_url", length = 255, nullable = false, updatable = false)
+    @Column(name = "image_url", length = 255, nullable = true, updatable = false)
     private String imageUrl;
 
     @CreatedDate
