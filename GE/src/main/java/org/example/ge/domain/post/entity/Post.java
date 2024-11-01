@@ -44,4 +44,10 @@ public class Post {
     public void updateImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    public void update(String title, String content, BigDecimal price) {
+        this.title = title;
+        this.content = content;
+        this.price = price;
+    }
 }
