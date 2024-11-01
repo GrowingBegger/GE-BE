@@ -14,7 +14,6 @@ public class UpdatePostRequestMapper implements Mapper<UpdatePostRequest, Post, 
                 .title(request.title())
                 .content(request.content())
                 .price(request.price())
-                .imageUrl(params.imageUrl())
                 .build();
     }
 

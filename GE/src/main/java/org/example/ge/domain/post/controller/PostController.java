@@ -45,14 +45,14 @@ public class PostController {
     }
 
     @PatchMapping("/{id}")
-    public void updatePost(@PathVariable Long id, @RequestBody UpdatePostRequest request, @RequestPart(value = "image", required = false) MultipartFile image) {
+    public void updatePost(@PathVariable Long id, @RequestBody UpdatePostRequest request ) {
         Long userId = currentUserProvider.getCurrentUserId();
-        updatePostService.updatePost(id, userId, request, image);
+        updatePostService.updatePost(id, userId, request);
     }
 
     // 파일 업로드를 위한 메소드 추가
     @PostMapping("/{id}/image")
-    public void attachImage(@PathVariable Long id, @RequestPart("image") MultipartFile image) {
+    public void attachImage(@PathVariable Long id, @RequestPart(value = "image", required = true) MultipartFile image) {
         Long userId = currentUserProvider.getCurrentUserId();
         attachPostImageService.attachImage(id, userId, image);
     }

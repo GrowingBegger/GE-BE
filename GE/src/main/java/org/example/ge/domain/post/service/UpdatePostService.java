@@ -23,18 +23,12 @@ public class UpdatePostService {
 
     private final FileUploader fileUploader;
 
-    public void updatePost(Long postId, Long userId, UpdatePostRequest request, MultipartFile image) {
+    public void updatePost(Long postId, Long userId, UpdatePostRequest request) {
         Post post = postRepository.findById(postId)
                 .orElseThrow(PostNotFoundException::new);
 
-        String imageUrl = post.getImageUrl();
-
-        if(image != null) {
-            imageUrl = fileUploader.upload(image);
-        }
-
         if (post.getUserId().equals(userId)) {
-            postRepository.save(updatePostRequestMapper.toEntity(request, new UpdatePostParams(post.getId(), imageUrl)));
+            postRepository.save(updatePostRequestMapper.toEntity(request, new UpdatePostParams(post.getId())));
         } else {
             throw InvalidAuthorDeletionException.EXCEPTION;
         }
