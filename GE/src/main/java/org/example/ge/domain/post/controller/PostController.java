@@ -3,10 +3,12 @@ package org.example.ge.domain.post.controller;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
+import org.example.ge.domain.post.controller.dto.request.UpdatePostRequest;
 import org.example.ge.domain.post.controller.dto.response.GetPostResponse;
 import org.example.ge.domain.post.service.CreatePostService;
 import org.example.ge.domain.post.service.DeletePostService;
 import org.example.ge.domain.post.service.GetPostService;
+import org.example.ge.domain.post.service.UpdatePostService;
 import org.example.ge.instrastructure.common.user.CurrentUserProvider;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,6 +27,8 @@ public class PostController {
 
     private final DeletePostService deletePostService;
 
+    private final UpdatePostService updatePostService;
+
     @PostMapping
     public void createPost(@RequestBody CreatePostRequest request, @RequestPart(value = "image") MultipartFile image) {
         Long userId = currentUserProvider.getCurrentUserId();
@@ -39,5 +43,11 @@ public class PostController {
     @DeleteMapping("/{id}")
     public void deletePost(@PathVariable Long id) {
         deletePostService.deletePost(id, currentUserProvider.getCurrentUserId());
+    }
+
+    @PatchMapping("/{id}")
+    public void updatePost(@PathVariable Long id, @RequestBody UpdatePostRequest request, @RequestPart(value = "image") MultipartFile image) {
+        Long userId = currentUserProvider.getCurrentUserId();
+        updatePostService.updatePost(id, userId, request, image);
     }
 }
