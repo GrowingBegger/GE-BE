@@ -5,10 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
 import org.example.ge.domain.post.controller.dto.request.UpdatePostRequest;
 import org.example.ge.domain.post.controller.dto.response.GetPostResponse;
-import org.example.ge.domain.post.service.CreatePostService;
-import org.example.ge.domain.post.service.DeletePostService;
-import org.example.ge.domain.post.service.GetPostService;
-import org.example.ge.domain.post.service.UpdatePostService;
+import org.example.ge.domain.post.service.*;
 import org.example.ge.instrastructure.common.user.CurrentUserProvider;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,10 +26,12 @@ public class PostController {
 
     private final UpdatePostService updatePostService;
 
+    private final AttachPostImageService attachPostImageService;
+
     @PostMapping
-    public void createPost(@RequestBody CreatePostRequest request, @RequestPart(value = "image") MultipartFile image) {
+    public void createPost(@RequestBody CreatePostRequest request) {
         Long userId = currentUserProvider.getCurrentUserId();
-        createPostService.execute(request, userId, image);
+        createPostService.execute(request, userId);
     }
 
     @GetMapping
@@ -46,8 +45,14 @@ public class PostController {
     }
 
     @PatchMapping("/{id}")
-    public void updatePost(@PathVariable Long id, @RequestBody UpdatePostRequest request, @RequestPart(value = "image") MultipartFile image) {
+    public void updatePost(@PathVariable Long id, @RequestBody UpdatePostRequest request ) {
         Long userId = currentUserProvider.getCurrentUserId();
-        updatePostService.updatePost(id, userId, request, image);
+        updatePostService.updatePost(id, userId, request);
+    }
+
+    @PostMapping("/{id}/image")
+    public void attachImage(@PathVariable Long id, @RequestPart(value = "image", required = true) MultipartFile image) {
+        Long userId = currentUserProvider.getCurrentUserId();
+        attachPostImageService.attachImage(id, userId, image);
     }
 }

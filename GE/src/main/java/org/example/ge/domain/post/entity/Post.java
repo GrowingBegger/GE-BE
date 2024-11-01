@@ -38,4 +38,8 @@ public class Post {
 
     @Column(name = "price", nullable = false, updatable = false)
     private BigDecimal price;
+
+    public void updateImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }
