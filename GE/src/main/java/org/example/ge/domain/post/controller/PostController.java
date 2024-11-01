@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.post.controller.dto.request.CreatePostRequest;
 import org.example.ge.domain.post.controller.dto.response.GetPostResponse;
 import org.example.ge.domain.post.service.CreatePostService;
+import org.example.ge.domain.post.service.DeletePostService;
 import org.example.ge.domain.post.service.GetPostService;
 import org.example.ge.instrastructure.common.user.CurrentUserProvider;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,8 @@ public class PostController {
 
     private final GetPostService getPostService;
 
+    private final DeletePostService deletePostService;
+
     @PostMapping
     public void createPost(@RequestBody CreatePostRequest request, @RequestPart(value = "image") MultipartFile image) {
         Long userId = currentUserProvider.getCurrentUserId();
@@ -31,5 +34,10 @@ public class PostController {
     @GetMapping
     public List<GetPostResponse> getPosts() {
         return getPostService.getPosts();
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletePost(@PathVariable Long id) {
+        deletePostService.deletePost(id, currentUserProvider.getCurrentUserId());
     }
 }

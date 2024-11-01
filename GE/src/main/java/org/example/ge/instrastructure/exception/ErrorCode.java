@@ -15,7 +15,13 @@ public enum ErrorCode {
     FILE_IO_EXCEPTION(500, "파일 업로드 중 문제가 생겼습니다."),
 
     BAD_REQUEST(400, "잘못된 요청"),
-    INTERNAL_SERVER_ERROR(500, "서버 오류");
+    INTERNAL_SERVER_ERROR(500, "서버 오류"),
+
+    // post
+    InvalidAuthorDeletionException(400, "작성자만 삭제할 수 있습니다."),
+    POST_NOT_FOUND(404, "존재하지 않는 게시글입니다."),
+
+    ;
 
     private final Integer code;
     private final String message;
