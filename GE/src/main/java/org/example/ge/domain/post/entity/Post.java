@@ -22,23 +22,23 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", nullable = false, updatable = false)
+    @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(name = "title", length = 45, nullable = false, updatable = false)
+    @Column(name = "title", length = 45, nullable = false)
     private String title;
 
-    @Column(name = "content", columnDefinition = "TEXT", nullable = false, updatable = false)
+    @Column(name = "content", columnDefinition = "TEXT", nullable = false)
     private String content;
 
-    @Column(name = "image_url", length = 255, nullable = true, updatable = false)
+    @Column(name = "image_url", length = 255, nullable = true)
     private String imageUrl;
 
     @CreatedDate
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "price", nullable = false, updatable = false)
+    @Column(name = "price", nullable = false)
     private BigDecimal price;
 
     public void updateImageUrl(String imageUrl) {
