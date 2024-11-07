@@ -21,6 +21,9 @@ public enum ErrorCode {
     InvalidAuthorDeletionException(400, "작성자만 삭제할 수 있습니다."),
     POST_NOT_FOUND(404, "존재하지 않는 게시글입니다."),
 
+    // comment
+    FORBIDDEN_COMMENT(403, "자신이 작성하지 않은 댓글의 수정 또는 삭제를 시도했습니다."),
+    COMMENT_NOT_FOUND(404, "존재하지 않는 댓글입니다"),
     ;
 
     private final Integer code;
