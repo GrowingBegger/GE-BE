@@ -2,8 +2,10 @@ package org.example.ge.domain.comment.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.comment.dto.request.CreateCommentRequest;
+import org.example.ge.domain.comment.dto.request.UpdateCommentRequest;
 import org.example.ge.domain.comment.service.CreateCommentService;
 import org.example.ge.domain.comment.service.DeleteCommentService;
+import org.example.ge.domain.comment.service.UpdateCommentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class CommentController {
     private final CreateCommentService createCommentService;
     private final DeleteCommentService deleteCommentService;
+    private final UpdateCommentService updateCommentService;
 
     @PostMapping("/{postId}")
     @ResponseStatus(HttpStatus.OK)
@@ -24,5 +27,11 @@ public class CommentController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteComment(@PathVariable Long commentId) {
         deleteCommentService.execute(commentId);
+    }
+
+    @PatchMapping("/{commentId}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateComment(@PathVariable Long commentId, @RequestBody UpdateCommentRequest request) {
+        updateCommentService.execute(request, commentId);
     }
 }

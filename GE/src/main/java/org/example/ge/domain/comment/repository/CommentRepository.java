@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface CommentRepository extends CrudRepository<Comment, Long> {
 
-    Optional<Comment> findByPostId(Long postId);
+    Optional<Comment> findById(Long id);
 }
