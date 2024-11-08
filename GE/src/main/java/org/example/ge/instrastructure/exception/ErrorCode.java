@@ -25,6 +25,9 @@ public enum ErrorCode {
     FORBIDDEN_COMMENT(403, "자신이 작성하지 않은 댓글의 수정 또는 삭제를 시도했습니다."),
     COMMENT_NOT_FOUND(404, "존재하지 않는 댓글입니다"),
 
+    // like
+    NOT_VALID_LIKE_TYPE(400, "존재하지 않는 좋아요 타입입니다.")
+      
     // rating
     RATING_NOT_FOUND(404, "존재하지 않는 평가입니다.")
     ;
