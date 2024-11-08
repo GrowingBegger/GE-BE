@@ -11,7 +11,7 @@ import java.util.List;
 public interface PostRepository extends JpaRepository<Post, Long> {
 
     @Query(value = "SELECT DATE_FORMAT(created_at, '%m'), COALESCE(SUM(price), 0) " +
-            "FROM Post " +
+            "FROM post " +
             "WHERE DATE_FORMAT(created_at, '%Y') = :year AND user_id = :user_id " +
             "GROUP BY DATE_FORMAT(created_at, '%m') " +
             "ORDER BY 1 ASC", nativeQuery = true)
