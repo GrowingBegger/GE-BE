@@ -40,6 +40,7 @@ public class SpendingEventListener {
             expIncrease = 20;
         }
 
+        // totalExp 증가
         rating.setTotalExp(rating.getTotalExp() + expIncrease);
         ratingRepository.save(rating);
     }
