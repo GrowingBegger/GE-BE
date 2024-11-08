@@ -27,6 +27,9 @@ public enum ErrorCode {
 
     // like
     NOT_VALID_LIKE_TYPE(400, "존재하지 않는 좋아요 타입입니다.")
+      
+    // rating
+    RATING_NOT_FOUND(404, "존재하지 않는 평가입니다.")
     ;
 
     private final Integer code;
