@@ -33,11 +33,11 @@ public class SpendingEventListener {
 
         double expIncrease;
         if (spendingRatio < 0.3) {
-            expIncrease = 100;
+            expIncrease = 250;
         } else if (spendingRatio < 0.7) {
-            expIncrease = 50;
+            expIncrease = 150;
         } else {
-            expIncrease = 20;
+            expIncrease = 100;
         }
 
         // totalExp 증가
