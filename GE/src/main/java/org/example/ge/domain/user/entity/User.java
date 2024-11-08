@@ -29,14 +29,6 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    @ColumnDefault(value = "1")
-    private int userRank;
-
-    @Column(nullable = false)
-    @ColumnDefault(value = "0")
-    private int exp;
-
-    @Column(nullable = false)
     @ColumnDefault(value = "0")
     private Long target;
 
