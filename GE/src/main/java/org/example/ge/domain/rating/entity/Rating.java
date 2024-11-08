@@ -23,7 +23,7 @@ public class Rating {
 
     @Min(value = 0)
     @Max(value = 7)
-    @Column(name = "rating", nullable = false, updatable = false)
+    @Column(name = "rating", nullable = false, updatable = true)
     private Integer rating;
 
     private Double totalExp;
