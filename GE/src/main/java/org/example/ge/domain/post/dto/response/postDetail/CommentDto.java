@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public record CommentDto(
         String content,
-        LocalDateTime createdAt,
+        LocalDateTime created_at,
         UserDto user
 ) {
 }
