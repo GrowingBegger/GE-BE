@@ -43,7 +43,7 @@ public class GetPostDetailService {
         List<Comment> comments = commentRepository.findAllByPostId(postId);
         List<CommentDto> commentDto = comments.stream()
                 .map((comment) -> {
-                            User writer = userRepository.getUserByUserId(comment.getId())
+                            User writer = userRepository.getUserByUserId(comment.getUserId())
                                     .orElseThrow(() -> UserNotFoundException.EXCEPTION);
                             return new CommentDto(comment.getContent(),
                                     comment.getCreatedAt(),
