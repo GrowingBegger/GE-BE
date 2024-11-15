@@ -18,7 +18,7 @@ public interface LikeRepository extends CrudRepository<Like, LikeId> {
     @Query(value = """
     SELECT COUNT(r.like_type) AS count
     FROM (SELECT 'Best' AS like_type UNION ALL SELECT 'Good' UNION ALL SELECT 'Bad') AS types
-    LEFT JOIN recommend r ON r.like_type = types.like_type
+    LEFT JOIN recommend r ON r.like_type = types.like_type AND post_id = :postId
     GROUP BY types.like_type
     ORDER BY 
         CASE types.like_type
