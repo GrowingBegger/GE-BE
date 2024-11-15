@@ -35,4 +35,14 @@ public class GetPostService {
                 }
         ).toList();
     }
+
+    public List<GetPostResponse> getMyPosts(Long userId) {
+        List<Post> posts = postRepository.findAllByUserId(userId);
+        User user = userJpaRepository.findById(userId)
+                .orElseThrow(() -> UserNotFoundException.EXCEPTION);
+
+        return posts.stream().map(
+                post -> getPostResponseMapper.toDto(post, user)
+        ).toList();
+    }
 }

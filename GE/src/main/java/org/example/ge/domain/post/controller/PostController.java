@@ -65,4 +65,10 @@ public class PostController {
     public GetPostDetailResponse getPostDetail(@PathVariable Long postId) {
         return getPostDetailService.execute(postId);
     }
+
+    @GetMapping("/my")
+    public List<GetPostResponse> getMyPosts() {
+        Long userId = currentUserProvider.getCurrentUserId();
+        return getPostService.getMyPosts(userId);
+    }
 }

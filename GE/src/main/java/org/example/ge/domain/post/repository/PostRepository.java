@@ -16,4 +16,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
             "GROUP BY DATE_FORMAT(created_at, '%m') " +
             "ORDER BY 1 ASC", nativeQuery = true)
     List<Object[]> getYearSum(@Param("year") String year, @Param("user_id") Long UserId);
+
+    List<Post> findAllByUserId(Long userId);
 }
