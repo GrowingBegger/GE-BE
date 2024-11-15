@@ -34,7 +34,7 @@ public class GetPostDetailService {
 
         User postWriter = userRepository.findById(post.getUserId())
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
-        UserDto postWriterDto = new UserDto(postWriter.getUsername(), postWriter.getProfile());
+        UserDto postWriterDto = new UserDto(postWriter.getNickname(), postWriter.getProfile());
 
         PostDto postDto = new PostDto(post.getId(), post.getTitle(), post.getImageUrl(), post.getPrice(), post.getCreatedAt(), postWriterDto);
 
