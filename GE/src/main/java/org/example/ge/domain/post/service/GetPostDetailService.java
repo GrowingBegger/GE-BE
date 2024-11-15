@@ -36,7 +36,7 @@ public class GetPostDetailService {
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
         UserDto postWriterDto = new UserDto(postWriter.getNickname(), postWriter.getProfile());
 
-        PostDto postDto = new PostDto(post.getId(), post.getTitle(), post.getImageUrl(), post.getPrice(), post.getCreatedAt(), postWriterDto);
+        PostDto postDto = new PostDto(post.getId(), post.getTitle(), post.getImageUrl(), post.getPrice(), post.getCreatedAt(), postWriterDto, post.getContent());
 
         List<Integer> likes = likeRepository.getLikeCntByPostId(postId);
 

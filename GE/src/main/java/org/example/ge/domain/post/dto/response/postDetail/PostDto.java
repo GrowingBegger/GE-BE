@@ -9,6 +9,7 @@ public record PostDto(
         String image_url,
         BigDecimal price,
         LocalDateTime created_at,
-        UserDto user
+        UserDto user,
+        String content
 ) {
 }
