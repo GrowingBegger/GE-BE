@@ -47,7 +47,7 @@ public class GetPostDetailService {
                                     .orElseThrow(() -> UserNotFoundException.EXCEPTION);
                             return new CommentDto(comment.getContent(),
                                     comment.getCreatedAt(),
-                                    new UserDto(writer.getUsername(), writer.getProfile()));
+                                    new UserDto(writer.getNickname(), writer.getProfile()));
                         }
                 ).toList();
 
