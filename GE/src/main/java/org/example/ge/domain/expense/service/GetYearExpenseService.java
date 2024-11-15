@@ -8,7 +8,6 @@ import org.example.ge.instrastructure.common.user.CurrentUserProvider;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class GetYearExpenseService {
     public GetExpenseDataResponse execute() {
         Long userId = currentUserProvider.getCurrentUserId();
 
-        List<Object[]> result = postRepository.getYearSum(Integer.toString(LocalDateTime.now().getYear()), userId);
+        List<Object[]> result = postRepository.getSumOfExpensesOfCurrentYearByUserId(userId);
         List<ExpenseData> expenseData = result.stream()
                 .map(row -> new ExpenseData(Integer.parseInt((String) row[0]), ((BigDecimal) row[1]).longValue()))
                 .toList();

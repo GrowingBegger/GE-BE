@@ -28,7 +28,7 @@ public class Post {
     @Column(name = "title", length = 45, nullable = false)
     private String title;
 
-    @Column(name = "content", columnDefinition = "TEXT", nullable = false)
+    @Column(name = "content", columnDefinition = "VARCHAR(100)", nullable = false)
     private String content;
 
     @Column(name = "image_url", length = 255, nullable = true)

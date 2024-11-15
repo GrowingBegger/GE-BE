@@ -3,6 +3,8 @@ package org.example.ge.domain.expense.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.ge.domain.expense.dto.response.ExpenseData;
 import org.example.ge.domain.expense.dto.response.GetExpenseDataResponse;
+import org.example.ge.domain.expense.dto.response.GetMonthlyExpenseDataResponse;
+import org.example.ge.domain.expense.service.GetMonthlyExpenseDataService;
 import org.example.ge.domain.expense.service.GetYearExpenseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +19,17 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ExpenseController {
     private final GetYearExpenseService getYearExpenseService;
+    private final GetMonthlyExpenseDataService monthlyExpenseDataService;
 
-    @GetMapping()
+    @GetMapping("/year")
     @ResponseStatus(HttpStatus.OK)
     public GetExpenseDataResponse getExpense() {
         return getYearExpenseService.execute();
+    }
+
+    @GetMapping("/month")
+    @ResponseStatus(HttpStatus.OK)
+    public GetMonthlyExpenseDataResponse getMonthlyExpense() {
+        return monthlyExpenseDataService.execute();
     }
 }
