@@ -44,6 +44,6 @@ public class SignupService {
 
         ratingRepository.save(rating);
 
-        return new LoginResponse(jwtService.generateAccess(newUser.getUserId()));
+        return new LoginResponse(jwtService.generateAccess(newUser.getUserId()), request.nickname());
     }
 }

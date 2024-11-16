@@ -27,6 +27,6 @@ public class LoginService {
             throw PasswordMismatches.EXCEPTION;
         }
 
-        return new LoginResponse(jwtService.generateAccess(user.getUserId()));
+        return new LoginResponse(jwtService.generateAccess(user.getUserId()), user.getNickname());
     }
 }
