@@ -34,7 +34,9 @@ public class GetMonthlyExpenseDataService {
                     dailyData.add(new ExpenseDatumOfTitleAndPrice((String) expense[1], ((BigDecimal) expense[2]).longValue()));
                 }
             }
-            groupedExpenses.add(new DailyExpenseDatum(date, dailyData));
+            if (!dailyData.isEmpty()) {
+                groupedExpenses.add(new DailyExpenseDatum(date, dailyData));
+            }
         }
 
         return new GetMonthlyExpenseDataResponse(groupedExpenses);
