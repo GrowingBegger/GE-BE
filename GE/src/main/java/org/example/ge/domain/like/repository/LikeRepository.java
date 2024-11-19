@@ -15,6 +15,8 @@ public interface LikeRepository extends CrudRepository<Like, LikeId> {
 
     Boolean existsByPostAndUser(Post post, User user);
 
+    void deleteAllByPost(Post post);
+
     @Query(value = """
     SELECT COUNT(r.like_type) AS count
     FROM (SELECT 'Best' AS like_type UNION ALL SELECT 'Good' UNION ALL SELECT 'Bad') AS types
